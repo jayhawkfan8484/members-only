@@ -74,7 +74,7 @@ app.use("/messages", messageRouter);
 app.use("/users", ensureAuthenticated, userRouter);
 app.use("/", ensureNotAuthenticated, indexRouter);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`app listening on port ${port}`));
 
 function ensureAuthenticated(req, res, next) {
