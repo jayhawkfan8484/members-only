@@ -1,5 +1,6 @@
 const session = require("express-session");
 const express = require("express");
+var helmet = require("helmet");
 const MongoStore = require("connect-mongo")(session);
 const path = require("path");
 const passport = require("passport");
@@ -26,6 +27,8 @@ db.on("error", console.error.bind(console, "mongo connection error"));
 db.on("connected", () => console.log("DB Connected"));
 
 const app = express();
+
+app.use(helmet());
 
 //Passport config
 require("./config/passport")(passport);
