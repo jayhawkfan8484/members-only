@@ -11,7 +11,7 @@ const cookieParser = require("cookie-parser");
 const indexRouter = require("./routes/index");
 const userRouter = require("./routes/user");
 const keys = require("./config/keys");
-require("dotenv").config();
+// require("dotenv").config();
 
 //Mongoose Database setup
 const mongoose = require("mongoose");
